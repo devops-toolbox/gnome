@@ -8,10 +8,10 @@ gnome: Gnome
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.gnome](https://galaxy.ansible.com/devops-toolbox.gnome)
+[https://galaxy.ansible.com/devopstoolbox.gnome](https://galaxy.ansible.com/devopstoolbox.gnome)
 
 ```bash
-ansible-galaxy install devops-toolbox.gnome
+ansible-galaxy install devopstoolbox.gnome
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: gnome is configured
       import_role:
-        name: devops-toolbox.gnome
+        name: devopstoolbox.gnome
       vars:
         gnome_packages_state: present
         gnome_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
