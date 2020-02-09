@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+gnome_repos_create: "{{ _gnome_repos_create['all']
+  | union ( _gnome_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+gnome_repos_download: "{{ _gnome_repos_download['all']
+  | union ( _gnome_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+gnome_templates_copy: "{{ _gnome_templates_copy['all']
+  | union ( _gnome_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+gnome_services_enable: "{{ _gnome_services_enable['all']
+  | union ( _gnome_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+gnome_selinux_enable: "{{ _gnome_selinux_enable['all']
+  | union ( _gnome_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+gnome_packages_remove: "{{ _gnome_packages_remove['all']
+  | union ( _gnome_packages_remove[my_os]
+  | default([]) ) }}"
+gnome_packages_repos: "{{ _gnome_packages_repos['all']
+  | union ( _gnome_packages_repos[my_os]
+  | default([]) ) }}"
+gnome_packages_prereq: "{{ _gnome_packages_prereq['all']
+  | union ( _gnome_packages_prereq[my_os]
+  | default([]) ) }}"
+gnome_packages_install: "{{ _gnome_packages_install['all']
+  | union ( _gnome_packages_install[my_os]
+  | default([]) ) }}"

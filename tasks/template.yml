@@ -1,0 +1,10 @@
+---
+# Template configuration files for gnome
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ gnome_templates_copy }}"
+  when: gnome_copy_templates
